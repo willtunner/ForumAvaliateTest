@@ -56,8 +56,14 @@ router.post('/question/delete', (req, res) => {
   }
 });
 
+// Route for edit
 router.get('/question/edit/:id', (req, res) => {
-  const { id } = req.params.id;
+  const { id } = req.params;
+
+  // Verifica se o id não é numero
+  if (isNaN(id)) {
+    res.redirect('/');
+  }
 
   Forum.findByPk(id)
     .then((questions) => {
@@ -68,6 +74,44 @@ router.get('/question/edit/:id', (req, res) => {
       }
     })
     .catch((erro) => {
+      res.redirect('/');
+    });
+});
+
+// Route for update
+router.post('/question/update', (req, res) => {
+  const { id, title, body, name } = req.body;
+
+  Forum.update(
+    {
+      title,
+      slug: slugify(title),
+      body,
+      name,
+    },
+    { where: { id } }
+  ).then(() => {
+    res.redirect('/');
+  });
+});
+
+// Route for read a Question
+router.get('/article/:slug', (req, res) => {
+  const { slug } = req.params;
+
+  Forum.findOne({
+    where: {
+      slug,
+    },
+  })
+    .then((article) => {
+      if (article != undefined) {
+        res.render('question/articles', { article });
+      } else {
+        res.redirect('/');
+      }
+    })
+    .catch((err) => {
       res.redirect('/');
     });
 });

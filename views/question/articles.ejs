@@ -1,0 +1,85 @@
+<%- include ("../partials/header.ejs") %>
+<body>
+  <div class="container">
+    <div style="display: flex; flex-direction: column">
+      <!-- ? Cabeçalho -->
+      <div
+        style="
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          width: auto;
+          padding: 50px;
+        "
+      >
+        <h4 style="margin-right: 25px"><%= article.title %></h4>
+        <h4 style="margin-right: 25px">#<%= article.id %></h4>
+        <h2 style="margin-right: 25px">- <%= article.name %></h2>
+      </div>
+
+      <!-- ? Artigo -->
+      <div
+        style="
+          margin-left: 100px;
+          margin-bottom: 40px;
+          padding-bottom: 40px;
+          border-bottom: solid;
+        "
+      >
+        <p><%= article.question %></p>
+      </div>
+
+      <!-- ? Comentários -->
+      <div style="padding: 60px; margin-left: 100px">
+        <h1>Replies</h1>
+        <br />
+
+        <div style="margin-bottom: 25px">
+          <h4>Carlos:</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+            unde provident accusantium expedita similique! Laboriosam totam
+            nesciunt nihil ipsum odio? Doloribus maxime vitae sunt. Consequuntur
+            excepturi pariatur dignissimos corporis dolorem?
+          </p>
+        </div>
+
+        <div style="margin-bottom: 25px">
+          <h4>Jenny:</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+            unde provident accusantium expedita similique! Laboriosam totam
+            nesciunt nihil ipsum odio? Doloribus maxime vitae sunt. Consequuntur
+            excepturi pariatur dignissimos corporis dolorem?
+          </p>
+        </div>
+
+        <div>
+          <h1>Reply:</h1>
+          <form action="">
+            <textarea
+              style="width: 800px; height: 100px"
+              name="comments"
+              id="comments"
+              cols="30"
+              rows="10"
+              placeholder="Here is a some text input. &#10;&#10; Here is another paragraph of input"
+            ></textarea>
+
+            <div style="display: flex; justify-content: space-between; width: 800px;margin-bottom: 50px; ">
+              <input
+                type="text"
+                class="form-control"
+                name="title"
+                placeholder="Title:"
+                style="width: 350px; height: 50px;"
+              />
+              <button style="height: 50px; width: 200px;" class="btn btn-success">Create</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<%- include ("../partials/footer.ejs") %>
