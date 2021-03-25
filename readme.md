@@ -6,9 +6,9 @@ Avaliation test
 
 Have sure that MySQL is running at your machine (or remote database, as you want) <br>
 Create a database with the name `forum` <br>
-Uncomment the "Forum.sync ({force: true});" found in `forum/Forum.js`
-to create a table in the database<br>
+Remove the comment from `Forum.sync ({force: true});` found in `forum/Forum.js` to create a table in the database, `after the created table you have to comment again so as not to recreate the table`.<br>
 We can run the project with `yarn dev` to run in development mode <br>
+using the endpoint `http://localhost:3000/` we go to the project's home page
 <br>
 
 
