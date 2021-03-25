@@ -1,0 +1,29 @@
+<%- include ("../../partials/header.ejs") %>
+
+  <div style="display: flex; justify-content: center; padding-bottom: 40px">
+    <% questions.forEach(question => { %>
+    <div
+      style="
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+        padding-bottom: 40px;
+        border-bottom: solid;
+        width: 70%;
+      "
+    >
+
+      <div>
+        <h1>Titulo for thread</h1>
+      </div>
+      <div style="display: flex; flex-direction: row">
+        <h3 style="color: #2d84ca; margin-right: 20px">details</h3>
+        <h3>4 replies</h3>
+      </div>
+
+    </div>
+    <% }) %>
+</div>
+
+<%- include ("../../partials/footer.ejs") %>

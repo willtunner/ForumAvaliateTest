@@ -1,0 +1,20 @@
+<%- include ("../partials/header.ejs") %>
+<div class="container" style="margin-top: 100px;border-style: solid; border-radius: 10px; padding: 10px;width: 600px;">
+  <div class="card" >
+    <div class="card-header">
+      <h2>Edit Thred</h2>
+    </div>
+    <div class="card-body">
+      <form action="/questions/save" method="POST">
+        <input type="text" class="form-control" name="title" placeholder="Title:" style="margin-bottom: 50px; width: 350px;"><br>
+        <textarea name="question" style="width: 500px;" id="" cols="30" rows="10" placeholder="Here is a some text input   &#10;&#10;Here is another paragraph of input. "></textarea>
+        <div style="display: flex; flex-direction: row;">
+          <input type="text" style="width: 350px; margin-right: 80px;" name="name" placeholder="Name:"><br>
+          <button class="btn btn-success">Update</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include ("../partials/footer.ejs") %>
